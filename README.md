@@ -7,11 +7,15 @@
 	
 [Express](https://github.com/expressjs/expressjs.com) es un framework para crear aplicaciones web en Node.js
 ```
-  Ejercicios del bootcamp backend de GeeksHub
+Ejercicios del bootcamp backend de GeeksHub
 ```
 Para instalar Express ejecutar:
 ```javascript
 $ npm i express
+```
+Para instalar body-parser (para acceso a la información del Body en POST) ejecutar:
+```javascript
+$ npm i express body-parser
 ```
 Instalar y registrar nodemon como dependecia de desarrollo
 ```javascript
@@ -20,4 +24,8 @@ $ npm i nodemon --save-dev
 Para iniciar la aplicación
 ```javascript
 $ npm run start
+```
+Para MyFirstExpress se necesita Express Generator
+```javascript
+$ npm install express-generator -g
 ```
