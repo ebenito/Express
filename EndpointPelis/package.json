@@ -1,14 +1,16 @@
 {
-  "name": "myfirstapp",
-  "version": "1.0.1",
-  "description": "An API rest server",
+  "name": "endpointpelis",
+  "version": "1.0.0",
+  "description": "KATA 1: Endpoint con 3 posibles formas de consultar un listado de peliculas",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./index.js localhost 4201",
+    "start": "nodemon ./index.js localhost 8080",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "express"
+    "express",
+    "endpoint",
+    "peliculas"
   ],
   "author": "ebenito",
   "license": "ISC",

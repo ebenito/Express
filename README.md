@@ -9,3 +9,15 @@
 ```
   Ejercicios del bootcamp backend de GeeksHub
 ```
+Para instalar Express ejecutar:
+```javascript
+$ npm i express
+```
+Instalar y registrar nodemon como dependecia de desarrollo
+```javascript
+$ npm i nodemon --save-dev
+```
+Para iniciar la aplicación
+```javascript
+$ npm run start
+```
