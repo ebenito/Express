@@ -6,6 +6,7 @@
 // Ejemplo basado en: https://expressjs.com/es/starter/hello-world.html
 
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const PORT = 4201;
 
@@ -45,8 +46,9 @@ app.get('/secreta', (req, res) => {
 })
 
 // Parámetros Request por el Body
-// Vamos a enviar información en el body del método POST.
-app.post('/request/food', (req, res) => {
- // res.send('Mi comida favorita es ' + req.body.food);
-  console.log("Dice que su comida favorita es", req);
+// Vamos a enviar información en el body del método POST. Ejemplo; desde postman enviar el JSON: { "food" : "Pizza"}
+app.use(bodyParser.json());
+app.post('/request/pregunta', (req, res) => {
+  res.send('Mi comida favorita es ' + req.body.comida);
+  console.log("Dice que su comida favorita es", req.body.comida);
 })
