@@ -1,6 +1,15 @@
 let conn = require("../connections/mysqlconnection");
 let Films = {};
 
+// crear los métodos para insertar nuevos registros
+Films.insert = (film, cb) => {
+  if (!conn) return cb("No se ha podido crear la conexión");
+  conn.query("INSERT INTO film SET ?", [film], (error, result) => {
+    if (error) return cb(error);
+    return cb(null, result.insertId);
+  });
+};
+
 Films.fetchAll = (cb) => {
   if (!conn) return cb("No se ha podido crear la conexión");
 
@@ -13,11 +22,3 @@ Films.fetchAll = (cb) => {
 
 module.exports = Films;
 
-// crear los métodos para insertar nuevos registros
-Films.insert = (film, cb) => {
-  if (!conn) return cb("No se ha podido crear la conexión");
-  conn.query("INSERT INTO film SET ?", [film], (error, result) => {
-    if (error) return cb(error);
-    return cb(null, result.insertId);
-  });
-};

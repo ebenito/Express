@@ -1,21 +1,23 @@
 var express = require("express");
 var router = express.Router();
 
+var FilmModel = require('../models/filmsModel.js')
+
 /* GET home page. */
 router.get("/", function (req, res, next) {
   res.render("index", { title: "Express" });
 });
 
 //vamos a pasar la información a la vista para ello vamos a crear una ruta que ejecuta la consulta del modelo películas
-router.get("/listado", (req, res, next) => {
-  filmModel.fetchAll((error, films) => {
+router.get('/listado', (req, res, next) => {
+  FilmModel.fetchAll((error, films) => {
     if (error) return res.status(500).json(error);
-    res.render("film-list", {
-      title: "Listado de peliculas",
-      layout: "layout.hbs",
-      films,
+    res.render('film_list.hbs', {
+      title: 'Listado de peliculas',
+      layout: 'layout',
+      films
     });
-  });
+  })
 });
 
 
