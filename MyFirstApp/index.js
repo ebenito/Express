@@ -14,6 +14,8 @@ app.listen(PORT, () => {
     console.log("Servidor levantado en el puerto " + PORT);
 })
 
+app.use(bodyParser.json()); //Para manejar las peticiones POST con un JSON en body
+
 //Ejemplos GET / RESPONSE
 app.get('/', (req, res) => {
     res.send(`La API está levantada en el puerto ${PORT}`);
@@ -47,8 +49,14 @@ app.get('/secreta', (req, res) => {
 
 // Parámetros Request por el Body
 // Vamos a enviar información en el body del método POST. Ejemplo; desde postman enviar el JSON: { "food" : "Pizza"}
-app.use(bodyParser.json());
 app.post('/request/pregunta', (req, res) => {
   res.send('Mi comida favorita es ' + req.body.comida);
   console.log("Dice que su comida favorita es", req.body.comida);
 })
+
+// Parámetros por Post y Get a la vez
+// El Id nos llega por Get en la URL y los parámetros nos llegan por Post. JSON de ejemplo: {"product" : ["Pizza", "tomate"]}
+app.post('/request/order/:id', (req, res) => {
+  res.send('Order ID ' + req.params.id + ' Products ' + req.body.product);
+ });
+ 
