@@ -1,0 +1,27 @@
+{{ appName }}
+
+{{#if usuarios.length}}
+    {{#each usuarios}}
+        {{id}}: {{name}},
+    {{/each}}
+{{else}}
+    No hay usuarios.
+{{/if}}
+
+{{!-- Otra forma: Podemos detectar automáticamente si un objeto está vacío o creado con la propiedad unless --}}
+{{#unless usuarios}}
+No hay usuarios
+{{/unless}}
+
+{{!-- Podemos cargar un objeto en particular. --}}
+{{#with administrador}}
+    Nombre: {{ nombre}} , Apellidos : {{ apellidos }}
+{{else}}
+    No existe el administrador
+{{/with}}
+
+<!-- aparece en la consola de node js -->
+{{log "Prueba del Log"}}
+
+{{!-- Llamada al archivo partial.hbs --}}
+{{> partial }}
