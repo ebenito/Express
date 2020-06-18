@@ -1,0 +1,21 @@
+{
+  "name": "demoBower",
+  "description": "Prueba bower",
+  "main": "",
+  "authors": [
+    "Esteban Benito"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ebenito/Express",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.5.0"
+  }
+}
