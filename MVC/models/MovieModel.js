@@ -7,7 +7,7 @@ MovieModel.findAll = () => db;
 MovieModel.findBy = (id) => db.find(movie => movie.id == id);
 
 MovieModel.insert = (NewMovie) => {
-    //console.log(NewMovie);
+    console.log(NewMovie);
     db.push(NewMovie);
     return NewMovie;
 }
