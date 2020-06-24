@@ -4,10 +4,19 @@ MovieModel = {};
 
 MovieModel.findAll = () => db;
 
+MovieModel.getPage = (nPage) => {
+    //Paginación de los resultados en bloques de 10 items
+    const posiIni = (nPage -1) * 10;    
+    //console.log(nPage, posiIni);
+    let page = db.slice(posiIni, posiIni + 10); //https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/slice
+
+    return page;
+}
+
 MovieModel.findBy = (id) => db.find(movie => movie.id == id);
 
 MovieModel.insert = (NewMovie) => {
-    console.log(NewMovie);
+    //console.log(NewMovie);
     db.push(NewMovie);
     return NewMovie;
 }

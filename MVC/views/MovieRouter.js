@@ -6,6 +6,9 @@ const MovieController = require('../controllers/MovieController');
 //Devuelve toda la BD de peliculas
 router.get('/', MovieController.getAll);
 
+//RETO: Consulta listado por paginacion
+router.get('/page/:nPage', MovieController.getPage);
+
 //Consulta item por ID
 router.get('/:id', MovieController.getById);
 

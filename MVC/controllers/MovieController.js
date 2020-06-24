@@ -5,6 +5,11 @@ MovieController.getAll = (req, res) => {
     res.json(MovieModel.findAll());
 }
 
+MovieController.getPage = (req, res) => {
+    const { nPage } = req.params;      
+    res.json(MovieModel.getPage(nPage)); 
+}
+
 MovieController.getById = (req, res) => {
     const { id } = req.params;  //Alternativa: const id = req.params.id;  
     res.json(MovieModel.findBy(id)); 
