@@ -29,3 +29,7 @@ Para MyFirstExpress se necesita Express Generator
 ```javascript
 $ npm install express-generator -g
 ```
+Para la demo de MVC se necesita Morgan para el logger (además de Body-Parser y Nodemon)
+```javascript
+$ npm i morgan
+```
